@@ -1,0 +1,9 @@
+{% extends './layout.html' %}
+{% block content %}
+    <form action="/add/" method="post" autocomplete="off" id="addForm" class="mx-auto text-center">
+        {% csrf_token %}
+        {{form}}
+        
+        <button type="submit" name="add" class="btn btn-light w-100 ">Add</button>
+    </form>
+{% endblock %}
