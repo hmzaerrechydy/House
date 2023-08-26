@@ -11,15 +11,6 @@
     width: 100%;
 }
 
-.badge{
-    background-color: #e7e7e7;
-    color: initial;
-    font-size: 1rem;
-    margin-right: 0.5rem;
-    font-weight: 400;
-    margin: 0.1rem;
-}
-
 a{
     text-decoration: none;
     color: initial;
@@ -48,8 +39,5 @@ label{
     }
     #app, #addForm{
         margin-top: 1rem !important;
-    }
-    .badge{
-        margin-top: 0.5rem;
     }
 }

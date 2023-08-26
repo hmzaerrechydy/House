@@ -3,15 +3,32 @@ from django import forms
 class addContent(forms.Form):
     title = forms.CharField(label="title")
     url = forms.CharField(label="url") 
-    CHOICES = (
+
+    TYPE_CHOICES = (
+    ('','Type'),
     ('Book','Book'),
     ('Article','Article'),
     ('Video','Video'),
-    ('Podcast Episode','Podcast Episode'),
+    ('Podcast','Podcast'),
     ('Course','Course'),
+    ('Blog','Blog'),
     )
-    type = forms.ChoiceField(widget=forms.Select, choices=CHOICES)
-    topic = forms.CharField(label="topic") 
+    type = forms.ChoiceField(widget=forms.Select, choices=TYPE_CHOICES)
+
+    TOPIC_CHOICES = (
+        ('', 'Topic'),
+        ('Religion', 'Religion'), 
+        ('Technology', 'Technology'), 
+        ('Science', 'Science'),
+        ('History', 'History'),
+        ('Business', 'Business'), 
+        ('Art', 'Art'), 
+        ('Languages', 'Languages'), 
+        ('Economics', 'Economics'), 
+        ('Philosophy', 'Philosophy')
+    )
+    topic = forms.ChoiceField(widget=forms.Select, choices=TOPIC_CHOICES)
+    
     author = forms.CharField(label="author")
 
     title.widget.attrs['class'] = 'form-control'
@@ -22,9 +39,8 @@ class addContent(forms.Form):
     
     type.widget.attrs['class'] = 'form-select'
     
-    topic.widget.attrs['class'] = 'form-control'
-    topic.widget.attrs['placeholder'] = 'Topic'
-
+    topic.widget.attrs['class'] = 'form-select'
+    
     author.widget.attrs['class'] = 'form-control'
     author.widget.attrs['placeholder'] = 'Author'
 

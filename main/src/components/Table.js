@@ -2,6 +2,14 @@ import React from "react";
 
 const Table = ({data}) => {
 
+  const url = (u) => {
+    if(u.length <= 25){
+      return u; 
+    }else{
+      return u.slice(0,25) + '...'; 
+    }
+  }
+  
   return (
     <table className="table table-hover">
         <thead>
@@ -17,12 +25,10 @@ const Table = ({data}) => {
         {data.map((item) => (
           <tr key={item.id}>
             <td>{item.title}</td>
-            <td><a className="link-secondary" href={item.url} target="_blank">{item.url.slice(0,25)}...</a></td>
+            <td><a className="link-secondary" href={item.url} target="_blank">{url(item.url)}</a></td>
             <td>{item.type}</td>
-            <td>{item.topic.split(" ").map((topic) => (
-              <span className="badge badge-dark">{topic}</span>
-              ))}</td>
-            <td><span className="badge badge-dark">{item.author}</span></td>
+            <td>{item.topic}</td>
+            <td>{item.author}</td>
           </tr>
         ))}
       </tbody>

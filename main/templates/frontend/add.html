@@ -6,4 +6,9 @@
         
         <button type="submit" name="add" class="btn btn-light w-100 ">Add</button>
     </form>
+    <script>
+        document.querySelectorAll('select').forEach(function(element) {
+            element.options[0].disabled = true;
+        });
+    </script>
 {% endblock %}
